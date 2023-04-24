@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <div class="cards">
+      <img src="/images/bg-card-front.png" alt="" class="front" />
+      <img src="/images/bg-card-back.png" alt="" class="back" />
+    </div>
+    <div class="card-text">
+      <div class="front">
+        <h3 class="cardnum">0000 0000 0000 0000</h3>
+        <div class="btm">
+          <p class="name">Jane Appleseed</p>
+          <div class="date">
+            <p class="month">00</p>
+            /
+            <p class="year">00</p>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <p class="cvv">000</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="bg-img">
+        <picture>
+          <source
+            media="(max-width: 375px)"
+            srcset="/images/bg-main-mobile.png"
+            height="270px"
+          />
+          <img src="/images/bg-main-desktop.png" alt="" height="100%" />
+        </picture>
+      </div>
+
+      <div class="form">
+        <form action="">
+          <div class="card-name">
+            <label for="cardname">CARDHOLDER NAME</label>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              id="cardnamei"
+              onkeyup="checkname()"
+            />
+            <span class="nameerr"></span>
+          </div>
+          <div class="card-number">
+            <label for="cardnumber">CARD NUMBER</label>
+            <input
+              type="tel"
+              placeholder="e.g. 1234 5678 9123 0000"
+              id="cardnumi"
+              onkeyup=" checknumber()"
+            />
+            <span class="numerr"></span>
+          </div>
+          <div class="exp-cvv">
+            <div class="exp">
+              <label for="expdate">Exp. Date (MM/YY)</label>
+              <div class="expinpt">
+                <input
+                  type="text"
+                  placeholder="MM"
+                  id="cardmoni"
+                  onkeyup="checkdate()"
+                />
+                <input
+                  type="text"
+                  placeholder="YY"
+                  id="cardyri"
+                  onkeyup="checkdate()"
+                />
+              </div>
+              <span class="dateerr"></span>
+            </div>
+            <div class="cvv">
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                placeholder="e.g. 123"
+                id="cardcvvi"
+                onkeyup="checkcvv()"
+              />
+              <span class="cvverr"></span>
+            </div>
+          </div>
+          <!-- <div class="cvv">
+              <label for="cvv">CVV</label>
+              <input
+                type="text"
+                placeholder="e.g. 123"
+                id="cardcvvi"
+                onkeyup="checkcvv()"
+              />
+              <span class="cvverr"></span>
+            </div> -->
+          <button onclick="return checkForm()">Confirm</button>
+          <span class="submiterr"></span>
+        </form>
+      </div>
+
+      <div class="completed remove">
+        <img src="/images/icon-complete.svg" alt="" />
+        <h2>THANK YOU!</h2>
+        <p>We've added your card credentials.</p>
+        <button>Continue</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
